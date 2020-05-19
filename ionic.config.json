@@ -1,5 +1,7 @@
 {
   "name": "Save",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }
