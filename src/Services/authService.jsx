@@ -3,7 +3,7 @@ import axios from 'axios';
 class AuthService {
   constructor() {
     this.auth = axios.create({
-      baseURL: "https://unitalkies.herokuapp.com",
+      baseURL: process.env.REACT_APP_BACKEND_BASE_URL,
       withCredentials: true
     })
   }
