@@ -18,23 +18,27 @@ class Bottom extends Component {
         const { user } = this.props;
         return (
             <>
-              <IonTabs>
-                  <IonRouterOutlet>
-                    <PrivateRoute exact path="/tab:(home)" component={Home} />
-                    <PrivateRoute exact path="/tab:(profile)/:username" component={Profile} />
-               </IonRouterOutlet>
-                <IonTabBar slot="bottom">
-                <IonTabButton tab="schedule" href="/home">
-                    <IonIcon icon={home} />
-                    <IonLabel>Home</IonLabel>
-                    <IonBadge color="primary">6</IonBadge>
-                </IonTabButton>
-                <IonTabButton tab="speakers" href={`/profile/${user.username}`}>
-                    <IonIcon icon={person} />
-                    <IonLabel>Perfil</IonLabel>
-                </IonTabButton>
-                </IonTabBar>
-              </IonTabs>
+               {
+                  user && ( 
+                    <IonTabs>
+                        <IonRouterOutlet>
+                            <PrivateRoute exact path="/tab:(home)" component={Home} />
+                            <PrivateRoute exact path="/tab:(profile)/:username" component={Profile} />
+                        </IonRouterOutlet>
+                        <IonTabBar slot="bottom">
+                            <IonTabButton tab="schedule" href="/home">
+                                <IonIcon icon={home} />
+                                <IonLabel>Home</IonLabel>
+                                <IonBadge color="primary">6</IonBadge>
+                            </IonTabButton>
+                            <IonTabButton tab="speakers" href={`/profile/${user.username}`}>
+                                <IonIcon icon={person} />
+                                <IonLabel>Perfil</IonLabel>
+                            </IonTabButton>
+                        </IonTabBar>
+                    </IonTabs>
+                  )
+               }
             </>
         );
     }
