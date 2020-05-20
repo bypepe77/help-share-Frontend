@@ -29,7 +29,6 @@ import Tab2 from "./pages/Tab2";
 import Tab3 from "./pages/Tab3";
 import Home from "./components/Home";
 import Profile from "./components/UserProfile/Profile";
-import Menu from "./Menu/Menu";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
