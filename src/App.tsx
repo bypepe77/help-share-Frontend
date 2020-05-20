@@ -14,21 +14,10 @@ import { IonReactRouter } from "@ionic/react-router";
 import AnonRoute from "./components/Login/AnonRoute";
 import PrivateRoute from "./components/Login/PrivateRoute";
 import Login from "./components/Login/Login";
-import {
-  home,
-  person,
-  triangle,
-  calendar,
-  personCircle,
-  map,
-  informationCircle,
-} from "ionicons/icons";
 import AuthProvider, { withAuth } from "./Context/AuthContext";
-import Tab1 from "./pages/Tab1";
-import Tab2 from "./pages/Tab2";
-import Tab3 from "./pages/Tab3";
 import Home from "./components/Home";
 import Profile from "./components/UserProfile/Profile";
+import Bottom from "./Menu/Bottom";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -53,26 +42,14 @@ const App: React.FC = () => {
     <IonApp>
       <AuthProvider>
         <IonReactRouter>
-          <IonTabs>
             <IonRouterOutlet>
               <Switch>
                 <AnonRoute exact path="/" component={Login} />
                 <PrivateRoute exact path="/home" component={Home} />
-                <PrivateRoute exact path="/profile" component={Profile} />
+                <PrivateRoute exact path="/profile/:username" component={Profile} />
               </Switch>
             </IonRouterOutlet>
-            <IonTabBar slot="bottom">
-              <IonTabButton tab="schedule" href="/home">
-                <IonIcon icon={home} />
-                <IonLabel>Home</IonLabel>
-                <IonBadge color="primary">6</IonBadge>
-              </IonTabButton>
-              <IonTabButton tab="speakers" href="/profile">
-                <IonIcon icon={person} />
-                <IonLabel>Perfil</IonLabel>
-              </IonTabButton>
-            </IonTabBar>
-          </IonTabs>
+            <Bottom></Bottom>
         </IonReactRouter>
       </AuthProvider>
     </IonApp>
