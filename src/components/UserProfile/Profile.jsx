@@ -36,7 +36,6 @@ class Profile extends Component {
     }
     render() {
         const { profile, error, loading } = this.state;
-        console.log(profile.surname);
         return (
           <IonApp id="main">
             <Menu />
