@@ -4,13 +4,14 @@ import { IonContent, IonHeader, IonLabel, IonTitle, IonToolbar, IonButtons, IonB
 import { withAuth } from "../../Context/AuthContext";
 import profileServices from "../../Services/profileService";
 import Menu from "../Menu/Menu";
+import { PageLoading, UserError, userProfile } from "./UserData.js"
 class Profile extends Component {
     state = {
         posts: [],
         profile: {},
         loading: true,
         isFollowing: null,
-        error: undefined,
+        error: null,
     }
 
     async componentDidMount(){
@@ -24,13 +25,17 @@ class Profile extends Component {
                     loading: false
                 });
              });
-        this.setState({
-            profile: userProfile.userProfile,
-            posts: userProfile.posts,
-        });
+        if(userProfile){
+            this.setState({
+                profile: userProfile.userProfile,
+                posts: userProfile.posts,
+                loading: false,
+            });
+        }
+
     }
     render() {
-        const { profile } = this.state;
+        const { profile, error, loading } = this.state;
         console.log(profile.surname);
         return (
           <IonApp id="main">
@@ -44,7 +49,9 @@ class Profile extends Component {
                     </IonToolbar>
                 </IonHeader>
                 <IonContent>
-                   
+                    {error  &&  UserError(error) }
+                    {loading && PageLoading()}
+                    {!error && !loading && <div>{userProfile(profile)}</div>}
                 </IonContent>
                 
                 
