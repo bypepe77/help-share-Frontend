@@ -53,8 +53,6 @@ class Profile extends Component {
                     {loading && PageLoading()}
                     {!error && !loading && <div>{userProfile(profile)}</div>}
                 </IonContent>
-                
-                
           </IonApp>
         );
     }
