@@ -13,7 +13,7 @@ class profileService  {
         .then(({ data }) => data);
     }
     updateProfile(username, name , surname, description){
-      return this.profile.put(`/profile/edit/${username}`, {university, description, name, surname })
+      return this.profile.put(`/profile/edit/${username}`, { description, name, surname })
       .then(({ data }) => data);
   }
 }
