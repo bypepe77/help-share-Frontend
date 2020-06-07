@@ -5,6 +5,7 @@ import { withAuth } from "../../Context/AuthContext";
 import profileServices from "../../Services/profileService";
 import Menu from "../Menu/Menu";
 import { PageLoading, UserError, userProfile } from "./UserData.js"
+import { DivUserProfile } from "../../css/index";
 class Profile extends Component {
     state = {
         posts: [],
@@ -50,7 +51,7 @@ class Profile extends Component {
                 <IonContent>
                     {error  &&  UserError(error) }
                     {loading && PageLoading()}
-                    {!error && !loading && <div>{userProfile(profile)}</div>}
+                    {!error && !loading && <DivUserProfile>{userProfile(profile)}</DivUserProfile>}
                 </IonContent>
           </IonApp>
         );
