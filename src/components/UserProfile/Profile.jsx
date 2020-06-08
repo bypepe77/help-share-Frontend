@@ -6,6 +6,7 @@ import profileServices from "../../Services/profileService";
 import Menu from "../Menu/Menu";
 import { UserError, userProfile } from "./UserData.js"
 import { DivUserProfile, DivSpinner } from "../../css/index";
+import "../../css/styles.css";
 class Profile extends Component {
     state = {
         posts: [],
