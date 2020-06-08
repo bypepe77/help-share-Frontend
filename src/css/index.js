@@ -9,3 +9,9 @@ export const DivSpinner = styled.div`
     text-align: center;
     margin-top: 50%;
 `
+
+// HOME 
+
+export const DivAddPost = styled.div`
+   
+`
