@@ -1,8 +1,5 @@
 import React, { Component }  from "react"
 
-const PageLoading = () => {
-    return <p>Loading user...</p>
-}
 const UserError = error => {
     return <p>{error}</p>
 }
@@ -15,7 +12,6 @@ const userProfile = profile =>{
     )
 }
 export {
-    PageLoading,
     UserError,
     userProfile
 }
