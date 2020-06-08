@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonList, IonItemDivider, IonButton } from '@ionic/react';
+import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonList, IonItemDivider, IonButton } from '@ionic/react';
 import { withAuth } from "../Context/AuthContext";
 import Bottom from "../Menu/Bottom";
 
 class Home extends Component {
     render() {
         return (
-            <IonContent>
+            <IonApp>
                 <IonHeader>
                      <IonToolbar>
                         <IonTitle>Home</IonTitle>
                      </IonToolbar>
                 </IonHeader>
-            </IonContent>
+                <IonContent>
+                    <p>Home</p>
+                </IonContent>
+            </IonApp>
         );
     }
 }
