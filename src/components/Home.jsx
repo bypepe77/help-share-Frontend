@@ -18,7 +18,6 @@ class Home extends Component {
 
     modalController = () =>{
         const {ShowModal} = this.state;
-        console.log("click")
         this.setState({
             ShowModal: !ShowModal,
         })
