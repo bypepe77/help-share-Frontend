@@ -39,20 +39,16 @@ import "./theme/variables.css";
 
 const App: React.FC = () => {
   return (
-    <IonApp>
+    <>
       <AuthProvider>
-        <IonReactRouter>
-            <IonRouterOutlet>
               <Switch>
                 <AnonRoute exact path="/" component={Login} />
                 <PrivateRoute exact path="/home" component={Home} />
                 <PrivateRoute exact path="/profile/:username" component={Profile} />
               </Switch>
-            </IonRouterOutlet>
             <Bottom></Bottom>
-        </IonReactRouter>
       </AuthProvider>
-    </IonApp>
+    </>
   );
 };
 

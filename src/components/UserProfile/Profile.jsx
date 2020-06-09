@@ -39,7 +39,7 @@ class Profile extends Component {
     render() {
         const { profile, error, loading } = this.state;
         return (
-          <IonApp id="main">
+          <IonPage id="main">
             <Menu />
             <IonHeader>
                     <IonToolbar>
@@ -54,7 +54,7 @@ class Profile extends Component {
                     {loading && <DivSpinner> <IonSpinner name="dots" /> </DivSpinner>}
                     {!error && !loading && <DivUserProfile>{userProfile(profile)}</DivUserProfile>}
                 </IonContent>
-          </IonApp>
+          </IonPage>
         );
     }
 }

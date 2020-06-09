@@ -9,10 +9,13 @@ import {
     map,
     informationCircle,
   } from "ionicons/icons";
+import { Link, Redirect } from "react-router-dom";
 import PrivateRoute from "../components/Login/PrivateRoute";
 import Home from "../components/Home";
 import Profile from "../components/UserProfile/Profile";
 import { withAuth } from "../Context/AuthContext";
+import { DivMenu } from "../css/index";
+
 class Bottom extends Component {
     render() {
         const { user } = this.props;
@@ -20,23 +23,27 @@ class Bottom extends Component {
             <>
                {
                   user && ( 
-                    <IonTabs>
-                        <IonRouterOutlet>
-                            <PrivateRoute exact path="/tab:(home)" component={Home} />
-                            <PrivateRoute exact path="/tab:(profile)/:username" component={Profile} />
-                        </IonRouterOutlet>
-                        <IonTabBar slot="bottom">
-                            <IonTabButton tab="schedule" href="/home">
-                                <IonIcon icon={home} />
-                                <IonLabel>Home</IonLabel>
-                                <IonBadge color="primary">6</IonBadge>
+                    <DivMenu>
+                        <div style={{width: "50%", color: "black"}}>
+                        <Link to="/home">
+                            <IonTabButton>
+                                <IonIcon icon={home} style={{ color: "black"}} />
+                                <IonLabel style={{ color: "black"}}>Home</IonLabel>
+                                <IonBadge>6</IonBadge>
                             </IonTabButton>
-                            <IonTabButton tab="speakers" href={`/profile/${user.username}`}>
-                                <IonIcon icon={person} />
-                                <IonLabel>Perfil</IonLabel>
+                        </Link>
+                        </div>
+
+                        <div style={{width: "50%", color: "black"}}>
+                        <Link to={`/profile/${user.username}`}>
+                            <IonTabButton>
+                                <IonIcon icon={person} style={{ color: "black"}}/>
+                                <IonLabel style={{ color: "black"}}>profile</IonLabel>
                             </IonTabButton>
-                        </IonTabBar>
-                    </IonTabs>
+                        </Link>
+                        </div>
+
+                    </DivMenu>
                   )
                }
             </>
