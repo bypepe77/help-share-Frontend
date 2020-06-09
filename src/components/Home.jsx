@@ -8,10 +8,35 @@ import { DivAddPost } from "../css/index";
 import { NavLink } from 'react-router-dom';
 import { categories } from "../Helpers/Home/H_home";
 import "../css/scroll.css";
-
+import postServices from "../Services/postService";
 class Home extends Component {
     state = {
         ShowModal: false,
+        posts: [],
+        userPosts: [],
+        loading: true,
+    }
+
+    async componentDidMount(){
+        const { user } = this.props;
+        postServices
+        .listAllPost()
+            .then(posts => {
+            const userPosts = posts.filter(elem => elem.username._id === user._id);
+            this.setState({
+                posts,
+                userPosts,
+                loading: false
+            });
+            })
+            .catch(error => {
+            console.log(error);
+                this.setState({
+                    loading: false,
+                    error: "En estos mementos no ha sido posible cargar las publicaciones"
+                });
+            });
+
     }
     modalController = () =>{
         const {ShowModal} = this.state;
@@ -22,7 +47,8 @@ class Home extends Component {
 
     render() {
         const { ShowModal } = this.state;
-        console.log(categories);
+        const { posts } = this.state;
+        console.log(posts);
         return (
             <IonPage>
                 <IonHeader>
