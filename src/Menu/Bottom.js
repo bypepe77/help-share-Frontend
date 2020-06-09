@@ -25,22 +25,21 @@ class Bottom extends Component {
                   user && ( 
                     <DivMenu>
                         <div style={{width: "50%", color: "black"}}>
-                        <Link to="/home">
-                            <IonTabButton>
-                                <IonIcon icon={home} style={{ color: "black"}} />
-                                <IonLabel style={{ color: "black"}}>Home</IonLabel>
-                                <IonBadge>6</IonBadge>
-                            </IonTabButton>
-                        </Link>
+                            <Link to="/home">
+                                <IonTabButton>
+                                    <IonIcon icon={home} style={{ color: "black"}} />
+                                    <IonLabel style={{ color: "black"}}>Home</IonLabel>
+                                    <IonBadge>6</IonBadge>
+                                </IonTabButton>
+                            </Link>
                         </div>
-
                         <div style={{width: "50%", color: "black"}}>
-                        <Link to={`/profile/${user.username}`}>
-                            <IonTabButton>
-                                <IonIcon icon={person} style={{ color: "black"}}/>
-                                <IonLabel style={{ color: "black"}}>profile</IonLabel>
-                            </IonTabButton>
-                        </Link>
+                            <Link to={`/profile/${user.username}`}>
+                                <IonTabButton>
+                                    <IonIcon icon={person} style={{ color: "black"}}/>
+                                    <IonLabel style={{ color: "black"}}>profile</IonLabel>
+                                </IonTabButton>
+                            </Link>
                         </div>
 
                     </DivMenu>

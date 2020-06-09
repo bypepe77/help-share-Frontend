@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 class Home extends Component {
     handleClick = () => {
         console.log("click");
-        this.props.history.push("/profile/mario77");
+        this.props.history.push("/profile/mario77"); // Test
     }
     render() {
         return (
@@ -22,9 +22,13 @@ class Home extends Component {
                 </IonHeader>
                 <IonContent>
                     <p>Home</p>
-                        <DivAddPost onClick={ () => console.log("Clicked") } >
-                            s
-                        </DivAddPost>
+                    <DivAddPost>
+                        <IonFab vertical="bottom" horizontal="end" slot="fixed" style={{marginBottom: "60px"}}>
+                            <IonFabButton onClick={this.handleClick}>
+                                <IonIcon icon={add} />
+                            </IonFabButton>
+                        </IonFab>
+                    </DivAddPost>
                 </IonContent>
             </IonPage>
            
