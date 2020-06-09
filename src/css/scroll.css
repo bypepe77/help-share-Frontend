@@ -1,0 +1,21 @@
+.scroll{
+    overflow: auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    margin-left: -40px;
+    
+}
+.scroll-list{
+    display: flex;
+    justify-content: space-between;
+}
+.scroll-list{
+    text-align: center;
+    margin: 0 0.5em;
+    list-style:none
+}
+.scroll-item{
+    margin-left: 10px;
+}
