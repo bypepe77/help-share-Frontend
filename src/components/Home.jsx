@@ -11,11 +11,6 @@ class Home extends Component {
     state = {
         ShowModal: false,
     }
-    handleClick = () => {
-        console.log("click");
-        this.props.history.push("/profile/mario77"); // Test
-    }
-
     modalController = () =>{
         const {ShowModal} = this.state;
         this.setState({
@@ -45,8 +40,6 @@ class Home extends Component {
                             <p>Publicacion</p>
                         <IonButton onClick={this.modalController}>Cerrar</IonButton>
                      </IonModal>
-
-
                 </IonContent>
             </IonPage>
            
