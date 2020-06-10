@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
-import { IonApp,IonModal,  IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
-import { add } from  'ionicons/icons';
+import { IonApp,IonModal,  IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonToggle, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
+import { add, moon } from  'ionicons/icons';
 import { withAuth } from "../Context/AuthContext";
 import { Link } from "react-router-dom";
 import Bottom from "../Menu/Bottom";
@@ -44,6 +44,9 @@ class Home extends Component {
             ShowModal: !ShowModal,
         })
     }
+    toggleDarkModeHandler = () => {
+        document.body.classList.toggle("dark");
+      };
 
     render() {
         const { ShowModal } = this.state;
@@ -69,6 +72,17 @@ class Home extends Component {
                             })}
                         </ul>
                     </div>
+                    <IonList className="ion-margin-top">
+                        <IonItem>
+                            <IonIcon slot="start" icon={moon} />
+                            <IonLabel>Dark Mode</IonLabel>
+                            <IonToggle
+                                slot="end"
+                                name="darkMode"
+                                onIonChange={this.toggleDarkModeHandler}
+                            />
+                        </IonItem>
+                    </IonList>
                     <DivAddPost>
                         <IonFab vertical="bottom" horizontal="end" slot="fixed" style={{marginBottom: "60px"}}>
                             <IonFabButton onClick={this.modalController}>
