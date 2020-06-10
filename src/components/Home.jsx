@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { IonApp,IonModal,  IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonToggle, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
+import { IonApp,IonModal,  IonContent, IonHeader, IonPage, IonTitle, IonText, IonToolbar, IonToggle, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
 import { add, moon } from  'ionicons/icons';
 import { withAuth } from "../Context/AuthContext";
 import { Link } from "react-router-dom";
@@ -91,7 +91,9 @@ class Home extends Component {
                         </IonFab>
                     </DivAddPost>
                         <IonModal isOpen={ShowModal}>
-                            <p>Publicacion</p>
+                            <IonText color="dark">
+                                <p>Publicacion</p>
+                            </IonText>
                         <IonButton onClick={this.modalController}>Cerrar</IonButton>
                      </IonModal>
                 </IonContent>
