@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { IonPage, IonContent, IonItem,  IonTextarea, IonInput  } from '@ionic/react';
+import {ButtonWritePost} from "../../css/index";
+
 
 const TextArea = (props) => {
-    const [text, setText] = useState("");
+    const [state, setText] = useState({text: ""});
 
     const handleInputChange = (e) =>{
         setText({
-            [e.target.name] : e.target.value
+            [e.target.name] : e.target.value,
         })
     }
     const sendData = (e) =>{
@@ -19,8 +21,9 @@ const TextArea = (props) => {
             <IonContent>
                 <form onSubmit={sendData}>
                     <IonItem>
+                        {console.log(state.text.length)}
                         <IonTextarea name="text" onIonChange={handleInputChange} />
-                        <IonInput type="submit" value="Publicar"/>
+                        { state.text.length > 0 ? <ButtonWritePost>Publicar</ButtonWritePost> : <ButtonWritePost disabled={true}>Publicar</ButtonWritePost> }  
                     </IonItem>
                 </form>
             </IonContent>

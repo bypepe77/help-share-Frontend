@@ -27,3 +27,16 @@ export const DivMenu = styled.div`
     box-shadow: 0 -1px 1px -1px #333;
     width: 100%;
 `
+// MODAL
+
+export const ButtonWritePost = styled.button`
+  margin-top: 10px;
+  display: inline-block;
+  background-color: var(--ion-color-primary) ;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: ${( props ) =>  props.disabled ? "not-allowed" : "pointer" };
+  margin-top: 10px;
+  padding: 4px;
+  width: 120px;
+`;
