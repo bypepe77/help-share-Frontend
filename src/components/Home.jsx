@@ -101,7 +101,7 @@ class Home extends Component {
                             </IonHeader>
                             <IonContent>
                                 <IonText color="dark">
-                                    <p>Publicacion</p>
+                                    <p>Publicacion label</p>
                                 </IonText>
                             </IonContent>
                             <IonButton onClick={this.modalController}>Cerrar</IonButton>
