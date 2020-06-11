@@ -84,7 +84,7 @@ class Home extends Component {
                         </IonItem>
                     </IonList>
                     <DivAddPost>
-                        <IonFab vertical="bottom" horizontal="end" slot="fixed" style={{marginBottom: "60px"}}>
+                        <IonFab vertical="bottom" horizontal="end" slot="fixed" style={{marginBottom: "62px"}}>
                             <IonFabButton onClick={this.modalController}>
                                 <IonIcon icon={add} />
                             </IonFabButton>
