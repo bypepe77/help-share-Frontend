@@ -98,11 +98,13 @@ class Home extends Component {
                                     </IonButtons>
                                      <IonTitle>Add post</IonTitle>
                                 </IonToolbar>
-                                </IonHeader>
-                            <IonText color="dark">
-                                <p>Publicacion</p>
-                            </IonText>
-                        <IonButton onClick={this.modalController}>Cerrar</IonButton>
+                            </IonHeader>
+                            <IonContent>
+                                <IonText color="dark">
+                                    <p>Publicacion</p>
+                                </IonText>
+                            </IonContent>
+                            <IonButton onClick={this.modalController}>Cerrar</IonButton>
                      </IonModal>
                 </IonContent>
             </IonPage>
