@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import {IonModal, IonButtons, IonBackButton,  IonContent, IonHeader, IonPage, IonTitle, IonText, IonToolbar, IonToggle, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
+import {IonModal, IonButtons, IonBackButton,  IonContent, IonHeader, IonSpinner, IonPage, IonTitle, IonText, IonToolbar, IonToggle, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
 import { add, moon } from  'ionicons/icons';
 import { withAuth } from "../Context/AuthContext";
 import { Link } from "react-router-dom";
@@ -86,6 +86,11 @@ class Home extends Component {
                         </IonItem>
                     </IonList>
                     <div>
+                        {loading && (
+                            <div className="loading">
+                                <IonSpinner name="dots" />
+                            </div>
+                        )}
                         {!error ? (!loading && PostStatus(posts)
                              ) : (
                                 <div>
