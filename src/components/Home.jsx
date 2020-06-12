@@ -6,16 +6,18 @@ import { Link } from "react-router-dom";
 import Bottom from "../Menu/Bottom";
 import { DivAddPost } from "../css/index";
 import { NavLink } from 'react-router-dom';
-import { categories } from "../Helpers/Home/H_home";
+import { categories, PostStatus } from "../Helpers/Home/H_home";
 import TextArea from "./Modal/TextArea";
 import "../css/scroll.css";
 import postServices from "../Services/postService";
+import Post from "./Posts/Post";
 class Home extends Component {
     state = {
         ShowModal: false,
         posts: [],
         userPosts: [],
         loading: true,
+        error: undefined,
     }
 
     async componentDidMount(){
@@ -37,7 +39,6 @@ class Home extends Component {
                     error: "En estos mementos no ha sido posible cargar las publicaciones"
                 });
             });
-
     }
     modalController = () =>{
         const {ShowModal} = this.state;
@@ -51,7 +52,7 @@ class Home extends Component {
 
     render() {
         const { ShowModal } = this.state;
-        const { posts } = this.state;
+        const { posts, error, loading } = this.state;
         console.log(posts);
         return (
             <IonPage>
@@ -84,6 +85,14 @@ class Home extends Component {
                             />
                         </IonItem>
                     </IonList>
+                    <div>
+                        {!error ? (!loading && PostStatus(posts)
+                             ) : (
+                                <div>
+                                    <p>{error}</p>
+                                </div>
+                         )}
+                    </div>
                     <DivAddPost>
                         <IonFab vertical="bottom" horizontal="end" slot="fixed" style={{marginBottom: "62px"}}>
                             <IonFabButton onClick={this.modalController}>
