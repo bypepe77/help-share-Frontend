@@ -53,7 +53,6 @@ class Home extends Component {
     render() {
         const { ShowModal } = this.state;
         const { posts, error, loading } = this.state;
-        console.log(posts);
         return (
             <IonPage>
                 <IonHeader>
