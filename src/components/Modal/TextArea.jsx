@@ -21,7 +21,6 @@ const TextArea = (props) => {
             <IonContent>
                 <form onSubmit={sendData}>
                     <IonItem>
-                        {console.log(state.text.length)}
                         <IonTextarea name="text" onIonChange={handleInputChange} />
                         { state.text.length > 0 ? <ButtonWritePost>Publicar</ButtonWritePost> : <ButtonWritePost disabled={true}>Publicar</ButtonWritePost> }  
                     </IonItem>
