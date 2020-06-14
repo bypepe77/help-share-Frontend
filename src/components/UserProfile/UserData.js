@@ -1,9 +1,6 @@
 import React from "react"
 import Post from "../Posts/Post";
 
-const UserError = error => {
-    return <p>{error}</p>
-}
 const userProfile = (profile, posts) =>{
     return (
         <div className="user-Profile">
