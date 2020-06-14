@@ -2,7 +2,7 @@ ion-content{
     background-color: var(--ion-item-background);
 }
 .background-color{
-    background-color: var(--ion-item-background);
+    background-color: var(--ion-toolbar-background);
     
 }
 .icon-menu{
