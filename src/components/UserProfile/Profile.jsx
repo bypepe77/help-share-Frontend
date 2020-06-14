@@ -37,7 +37,8 @@ class Profile extends Component {
 
     }
     render() {
-        const { profile, error, loading } = this.state;
+        const { profile, error, loading, posts } = this.state;
+        console.log(posts)
         return (
           <IonPage id="main">
             <Menu />
@@ -52,7 +53,7 @@ class Profile extends Component {
                 <IonContent>
                     {error  &&  UserError(error) }
                     {loading && <DivSpinner> <IonSpinner name="dots" /> </DivSpinner>}
-                    {!error && !loading && <DivUserProfile>{userProfile(profile)}</DivUserProfile>}
+                    {!error && !loading && <DivUserProfile>{userProfile(profile, posts)}</DivUserProfile>}
                 </IonContent>
           </IonPage>
         );

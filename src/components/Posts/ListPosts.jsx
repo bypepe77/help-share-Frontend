@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const ListPosts = (props) =>{
     const { post } = props;
