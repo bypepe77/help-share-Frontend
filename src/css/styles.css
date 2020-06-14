@@ -12,17 +12,33 @@ ion-content{
 }
 
 /* POST STYLE */
-.container-home{
-    clear: both;
-    display: block;
-}
 .post-card{
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    padding: 32px 28px;
+    padding: 12px 28px;
     border-radius: 12px;
     background-color:  var(--ion-color-primary);
     position: relative;
+}
+.user-info{
+    padding: 2px 0 0 44px;
+    position: relative;
+}
+.user-info img{
+    margin-left: -60px;
+    margin-top: 4px;
+    position: absolute;
+    border-radius: 20px;
+}
+.username-size{
+    font-size: 16px;
+    margin-left: -10px;
+    font-weight: bold;
+    color: var(--ion-color-dark);
+}
+.post-text{
+    position: relative;
+    margin-top: 40px;
 }
