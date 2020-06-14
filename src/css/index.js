@@ -23,8 +23,7 @@ export const DivMenu = styled.div`
     right: 0;
     display: flex;
     flex-direction: row;
-    background-color: white;
-    box-shadow: 0 -1px 1px -1px #333;
+    box-shadow: 0 -1px 1px -1px var(--ion-color-dark);
     width: 100%;
 `
 // MODAL
