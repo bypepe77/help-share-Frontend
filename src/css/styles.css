@@ -1,3 +1,10 @@
 ion-content{
     background-color: var(--ion-item-background);
 }
+.background-color{
+    background-color: var(--ion-item-background);
+    
+}
+.icon-menu{
+    color: var(--ion-color-dark);
+}
