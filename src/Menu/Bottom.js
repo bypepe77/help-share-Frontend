@@ -15,6 +15,7 @@ import Home from "../components/Home";
 import Profile from "../components/UserProfile/Profile";
 import { withAuth } from "../Context/AuthContext";
 import { DivMenu } from "../css/index";
+import "../css/styles.css";
 
 class Bottom extends Component {
     render() {
@@ -24,20 +25,20 @@ class Bottom extends Component {
                {
                   user && ( 
                     <DivMenu>
-                        <div style={{width: "50%", color: "black"}}>
+                        <div style={{width: "50%"}} className="background-color">
                             <Link to="/home">
-                                <IonTabButton>
-                                    <IonIcon icon={home} style={{ color: "black"}} />
-                                    <IonLabel style={{ color: "black"}}>Home</IonLabel>
+                                <IonTabButton >
+                                    <IonIcon icon={home} className="icon-menu" />
+                                    <IonLabel className="icon-menu">Home</IonLabel>
                                     <IonBadge>6</IonBadge>
                                 </IonTabButton>
                             </Link>
                         </div>
-                        <div style={{width: "50%", color: "black"}}>
+                        <div style={{width: "50%", color: "black"}} className="background-color">
                             <Link to={`/profile/${user.username}`}>
-                                <IonTabButton>
-                                    <IonIcon icon={person} style={{ color: "black"}}/>
-                                    <IonLabel style={{ color: "black"}}>profile</IonLabel>
+                                <IonTabButton >
+                                    <IonIcon icon={person} className="icon-menu"/>
+                                    <IonLabel className="icon-menu">profile</IonLabel>
                                 </IonTabButton>
                             </Link>
                         </div>
