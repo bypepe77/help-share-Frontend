@@ -13,6 +13,5 @@ const userProfile = (profile, posts) =>{
     )
 }
 export {
-    UserError,
     userProfile
 }
