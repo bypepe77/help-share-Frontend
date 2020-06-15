@@ -13,9 +13,9 @@ const ListPosts = (props) =>{
                 <Link to={`/profile/${post.username.username}`}>
                     <p className="username-size">{post.username.username}</p>
                 </Link>
-            </div>
-            <div className="user-actions">
-                <IonIcon icon={ellipsisHorizontal} onClick={() => {console.log("click")}}/>
+                <div className="user-actions">
+                    <IonIcon icon={ellipsisHorizontal} onClick={() => {console.log("click")}} class="icon-user-actions"/>
+                </div>
             </div>
             <div>
                 <p className="post-text">{post.text}</p>

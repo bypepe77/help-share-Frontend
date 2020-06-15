@@ -44,6 +44,10 @@ ion-content{
 }
 .user-actions{
     position: absolute;
-    right: 16px;
-    margin-top: -36px;
+    right: -14px;
+    margin-top: -40px;
+}
+.icon-user-actions{
+    width: 24px;
+    height: 24px;
 }
