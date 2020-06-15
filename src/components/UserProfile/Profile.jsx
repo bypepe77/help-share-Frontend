@@ -36,6 +36,7 @@ class Profile extends Component {
         console.log(posts)
         return (
           <IonPage>
+            <IonRouterOutlet id="main"></IonRouterOutlet>
             <Menu />
             <IonHeader>
                     <IonToolbar>
@@ -50,7 +51,6 @@ class Profile extends Component {
                     {loading && <DivSpinner> <IonSpinner name="dots" /> </DivSpinner>}
                     {!error && !loading && <DivUserProfile>{userProfile(profile, posts)}</DivUserProfile>}
                 </IonContent>
-                <IonRouterOutlet id="main"></IonRouterOutlet>
           </IonPage>
         );
     }

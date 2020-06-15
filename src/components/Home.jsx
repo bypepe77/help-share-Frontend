@@ -37,9 +37,6 @@ class Home extends Component {
             ShowModal: !ShowModal,
         })
     }
-    toggleDarkModeHandler = () => {
-        document.body.classList.toggle("dark");
-      };
       addPost = publications =>{
         const {ShowModal} = this.state;
             this.setState({
@@ -71,17 +68,6 @@ class Home extends Component {
                             })}
                         </ul>
                     </div>
-                    <IonList className="ion-margin-top">
-                        <IonItem>
-                            <IonIcon slot="start" icon={moon} />
-                            <IonLabel>Dark Mode</IonLabel>
-                            <IonToggle
-                                slot="end"
-                                name="darkMode"
-                                onIonChange={this.toggleDarkModeHandler}
-                            />
-                        </IonItem>
-                    </IonList>
                     <div>
                         {loading && (
                             <div className="loading">
