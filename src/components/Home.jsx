@@ -51,8 +51,8 @@ class Home extends Component {
       };
 
     render() {
-        const { ShowModal } = this.state;
-        const { posts, error, loading } = this.state;
+        const { posts, error, loading, ShowModal } = this.state;
+        const { user } = this.props;
         return (
             <IonPage>
                 <IonHeader>
@@ -116,7 +116,7 @@ class Home extends Component {
                             <IonContent>
                                 <IonText color="dark">
                                     <p>Publicacion label</p>
-                                    <TextArea addPost={this.modalController}/>
+                                    <TextArea addPost={this.modalController} username={user}/>
                                 </IonText>
                             </IonContent>
                             <IonButton onClick={this.modalController}>Cerrar</IonButton>
