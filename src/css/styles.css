@@ -51,3 +51,6 @@ ion-content{
     width: 24px;
     height: 24px;
 }
+.post-date{
+    margin-left: -10px;
+}
