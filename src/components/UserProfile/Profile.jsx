@@ -7,6 +7,7 @@ import Menu from "../Menu/Menu";
 import { UserError, userProfile } from "./UserData.js"
 import { DivUserProfile, DivSpinner } from "../../css/index";
 import "../../css/styles.css";
+
 class Profile extends Component {
     state = {
         posts: [],
@@ -15,26 +16,21 @@ class Profile extends Component {
         isFollowing: null,
         error: null,
     }
-
     async componentDidMount(){
         const { username } = this.props.match.params;
-        const { user } = this.props; 
-        const userProfile = await profileServices
-            .listUserProfile(username)
-            .catch(error => {
-                this.setState({
-                    error: "El perfil que estas buscando no existe o no esta disponible",
-                    loading: false
-                });
-             });
-        if(userProfile){
+        try {
+            const userProfile = await profileServices.listUserProfile(username);
             this.setState({
                 profile: userProfile.userProfile,
                 posts: userProfile.posts,
-                loading: false,
-            });
+                loading: false
+            })
+        } catch (error) {
+            this.setState({
+                error: "El perfil que estas buscando no existe o no esta disponoible.",
+                loading: false
+            })
         }
-
     }
     render() {
         const { profile, error, loading, posts } = this.state;
