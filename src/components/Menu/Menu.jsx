@@ -14,7 +14,7 @@ class Menu extends Component {
             </IonHeader>
             <IonContent>
                 <IonList>
-                    <Link to="/home">
+                    <Link to="/settings">
                         <IonMenuToggle>
                             <IonItem button>
                                 <IonIcon slot="start" name="home"></IonIcon>
