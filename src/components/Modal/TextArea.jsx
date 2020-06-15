@@ -14,7 +14,14 @@ const TextArea = (props) => {
     const sendData = (e) =>{
         const { addPost, username } = props;
         e.preventDefault()
-        addPost();
+        postServices.createPost(username.username, state.text)
+        .then(post =>{
+            console.log("post ok", post);
+            addPost();
+        })
+        .catch(error =>{
+            console.log("Error")
+        });
     }
     return(
         <IonPage>
