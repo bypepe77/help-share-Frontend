@@ -2,6 +2,8 @@ import React from 'react';
 import "../../css/styles.css";
 import UserImage from "../../images/default.jpg";
 import { Link } from "react-router-dom";
+import { ellipsisHorizontal } from "ionicons/icons";
+import { IonIcon } from '@ionic/react';
 const ListPosts = (props) =>{
     const { post } = props;
     return (
@@ -11,6 +13,9 @@ const ListPosts = (props) =>{
                 <Link to={`/profile/${post.username.username}`}>
                     <p className="username-size">{post.username.username}</p>
                 </Link>
+            </div>
+            <div className="user-actions">
+                <IonIcon icon={ellipsisHorizontal} onClick={() => {console.log("click")}}/>
             </div>
             <div>
                 <p className="post-text">{post.text}</p>

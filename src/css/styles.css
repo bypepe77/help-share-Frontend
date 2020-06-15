@@ -42,3 +42,8 @@ ion-content{
     position: relative;
     margin-top: 40px;
 }
+.user-actions{
+    position: absolute;
+    right: 16px;
+    margin-top: -36px;
+}
