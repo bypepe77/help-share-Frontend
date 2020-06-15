@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import { IonContent, IonHeader, IonLabel, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonMenuButton, IonMenu,IonList,IonItem, IonRouterOutlet, IonMenuToggle, IonApp , IonSpinner,  IonPage } from '@ionic/react';
 import { withAuth } from "../../Context/AuthContext";
 import profileServices from "../../Services/profileService";
 import Menu from "../Menu/Menu";
-import { UserError, userProfile } from "./UserData.js"
+import { userProfile } from "./UserData.js"
 import { DivUserProfile, DivSpinner } from "../../css/index";
 import "../../css/styles.css";
 
@@ -36,7 +35,8 @@ class Profile extends Component {
         const { profile, error, loading, posts } = this.state;
         console.log(posts)
         return (
-          <IonPage id="main">
+          <IonPage>
+            <IonRouterOutlet id="main"></IonRouterOutlet>
             <Menu />
             <IonHeader>
                     <IonToolbar>

@@ -18,6 +18,7 @@ import AuthProvider, { withAuth } from "./Context/AuthContext";
 import Home from "./components/Home";
 import Profile from "./components/UserProfile/Profile";
 import Bottom from "./Menu/Bottom";
+import Settings from "./components/Settings/Settings";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -45,6 +46,7 @@ const App: React.FC = () => {
                 <AnonRoute exact path="/" component={Login} />
                 <PrivateRoute exact path="/home" component={Home} />
                 <PrivateRoute exact path="/profile/:username" component={Profile} />
+                <PrivateRoute exact path="/settings" component={Settings} />
               </Switch>
             <Bottom></Bottom>
       </AuthProvider>
