@@ -4,8 +4,11 @@ import UserImage from "../../images/default.jpg";
 import { Link } from "react-router-dom";
 import { ellipsisHorizontal } from "ionicons/icons";
 import { IonIcon } from '@ionic/react';
+import Moment from "react-moment"
+
 const ListPosts = (props) =>{
     const { post } = props;
+    const DateToFormat = post.created_at;
     return (
         <div className="post-card">
             <div className="user-info" >
@@ -16,6 +19,7 @@ const ListPosts = (props) =>{
                 <div className="user-actions">
                     <IonIcon icon={ellipsisHorizontal} onClick={() => {console.log("click")}} class="icon-user-actions"/>
                 </div>
+               <Moment fromNow date={DateToFormat}></Moment>
             </div>
             <div>
                 <p className="post-text">{post.text}</p>
