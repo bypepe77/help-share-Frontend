@@ -49,10 +49,17 @@ class Home extends Component {
     toggleDarkModeHandler = () => {
         document.body.classList.toggle("dark");
       };
+      addPost = publications =>{
+        const {ShowModal} = this.state;
+            this.setState({
+                ShowModal: !ShowModal,
+                posts: publications,
+            })
+      }
 
     render() {
-        const { ShowModal } = this.state;
-        const { posts, error, loading } = this.state;
+        const { posts, error, loading, ShowModal } = this.state;
+        const { user } = this.props;
         return (
             <IonPage>
                 <IonHeader>
@@ -116,7 +123,7 @@ class Home extends Component {
                             <IonContent>
                                 <IonText color="dark">
                                     <p>Publicacion label</p>
-                                    <TextArea addPost={this.modalController}/>
+                                    <TextArea addPost={this.addPost} username={user}/>
                                 </IonText>
                             </IonContent>
                             <IonButton onClick={this.modalController}>Cerrar</IonButton>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IonPage, IonContent, IonItem,  IonTextarea, IonInput  } from '@ionic/react';
 import {ButtonWritePost} from "../../css/index";
-
+import postServices from "../../Services/postService";
 
 const TextArea = (props) => {
     const [state, setText] = useState({text: ""});
@@ -12,9 +12,26 @@ const TextArea = (props) => {
         })
     }
     const sendData = (e) =>{
-        const { addPost } = props;
+        const { addPost, username } = props;
+
+        //REFACTOR 
+
         e.preventDefault()
-        addPost();
+        postServices.createPost(username.username, state.text)
+        .then(post =>{
+            postServices.listAllPost()
+            .then(publications =>{
+                addPost(publications);
+            })
+            .catch(error =>{
+                console.log("Error", error)
+            })
+        })
+        .catch(error =>{
+            console.log("Error")
+        });
+    
+        // REFACTOR 
     }
     return(
         <IonPage>
