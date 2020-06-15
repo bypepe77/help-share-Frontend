@@ -11,27 +11,22 @@ const TextArea = (props) => {
             [e.target.name] : e.target.value,
         })
     }
-    const sendData = (e) =>{
+    const sendData = async (e) =>{
         const { addPost, username } = props;
 
-        //REFACTOR 
-
         e.preventDefault()
-        postServices.createPost(username.username, state.text)
-        .then(post =>{
-            postServices.listAllPost()
-            .then(publications =>{
-                addPost(publications);
-            })
-            .catch(error =>{
-                console.log("Error", error)
-            })
-        })
-        .catch(error =>{
-            console.log("Error")
-        });
-    
-        // REFACTOR 
+        try {
+            const post = await postServices.createPost(username.username, state.text);
+            if(post){
+                const publications = await postServices.listAllPost();
+                if(publications){
+                    addPost(publications);
+                }
+            }
+
+        } catch (error) {
+            console.log("Error al crear el post");
+        }
     }
     return(
         <IonPage>
