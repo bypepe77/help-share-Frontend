@@ -1,11 +1,18 @@
 import React from 'react';
-import { IonContent, IonHeader, IonLabel, IonTitle, IonToolbar} from '@ionic/react';
+import {IonPage, IonContent, IonHeader, IonLabel, IonTitle, IonToolbar} from '@ionic/react';
 
 const Settings = () =>{
         return (
-            <div>
-                
-            </div>
+            <IonPage>
+                <IonHeader>
+                    <IonToolbar>
+                        <IonTitle>Settings</IonTitle>
+                    </IonToolbar>
+                </IonHeader>
+                <IonContent>
+                    <p>Ajustes</p>
+                </IonContent>
+            </IonPage>
         );
 }
 
