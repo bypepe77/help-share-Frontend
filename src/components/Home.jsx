@@ -21,24 +21,18 @@ class Home extends Component {
     }
 
     async componentDidMount(){
-        const { user } = this.props;
-        postServices
-        .listAllPost()
-            .then(posts => {
-            const userPosts = posts.filter(elem => elem.username._id === user._id);
+        try {
+            const posts = await postServices.listAllPost()
             this.setState({
                 posts,
-                userPosts,
                 loading: false
             });
-            })
-            .catch(error => {
-            console.log(error);
-                this.setState({
-                    loading: false,
-                    error: "En estos mementos no ha sido posible cargar las publicaciones"
-                });
+        } catch (error) {
+            this.setState({
+                loading: false,
+                error: "En estos momentos no ha sido posible cargar las publicaciones."
             });
+        }
     }
     modalController = () =>{
         const {ShowModal} = this.state;
