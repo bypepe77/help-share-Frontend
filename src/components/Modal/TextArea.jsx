@@ -13,6 +13,9 @@ const TextArea = (props) => {
     }
     const sendData = (e) =>{
         const { addPost, username } = props;
+
+        //REFACTOR 
+
         e.preventDefault()
         postServices.createPost(username.username, state.text)
         .then(post =>{
@@ -27,6 +30,8 @@ const TextArea = (props) => {
         .catch(error =>{
             console.log("Error")
         });
+    
+        // REFACTOR 
     }
     return(
         <IonPage>
