@@ -1,5 +1,6 @@
 import React from "react"
 import Post from "../../components/Posts/Post";
+import "../../css/styles.css"
 
 const categories = ["TestSlide1", "TestSlide2", "TestSlide3", "TestSlide4", "TestSlide5", "TestSlide6", "TestSlide7", "TestSlide8"];
 
@@ -12,7 +13,7 @@ const PostStatus = (posts) => {
         )
     }else{
         return(
-            <div>
+            <div className="container-home">
                 <Post posts={posts} />
             </div>
         )

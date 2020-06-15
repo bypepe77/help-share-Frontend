@@ -17,14 +17,13 @@ export const DivAddPost = styled.div`
 // MENU
 
 export const DivMenu = styled.div`
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
     display: flex;
     flex-direction: row;
     box-shadow: 0 -1px 1px -1px var(--ion-color-dark);
     width: 100%;
+    background-color: var(--ion-color-primary);
 `
 // MODAL
 
