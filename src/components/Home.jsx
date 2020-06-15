@@ -1,16 +1,13 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import {IonModal, IonButtons, IonBackButton,  IonContent, IonHeader, IonSpinner, IonPage, IonTitle, IonText, IonToolbar, IonToggle, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
 import { add, moon } from  'ionicons/icons';
 import { withAuth } from "../Context/AuthContext";
-import { Link } from "react-router-dom";
-import Bottom from "../Menu/Bottom";
 import { DivAddPost } from "../css/index";
-import { NavLink } from 'react-router-dom';
 import { categories, PostStatus } from "../Helpers/Home/H_home";
 import TextArea from "./Modal/TextArea";
 import "../css/scroll.css";
 import postServices from "../Services/postService";
-import Post from "./Posts/Post";
+
 class Home extends Component {
     state = {
         ShowModal: false,
