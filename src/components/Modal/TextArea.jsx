@@ -16,8 +16,13 @@ const TextArea = (props) => {
         e.preventDefault()
         postServices.createPost(username.username, state.text)
         .then(post =>{
-            console.log("post ok", post);
-            addPost();
+            postServices.listAllPost()
+            .then(publications =>{
+                addPost(publications);
+            })
+            .catch(error =>{
+                console.log("Error", error)
+            })
         })
         .catch(error =>{
             console.log("Error")
