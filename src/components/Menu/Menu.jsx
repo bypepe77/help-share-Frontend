@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { IonContent, IonHeader, IonLabel, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonMenuButton, IonMenu,IonList,IonItem, IonRouterOutlet, IonMenuToggle, IonApp, IonPage } from '@ionic/react';
 
 class Menu extends Component {
@@ -14,14 +14,14 @@ class Menu extends Component {
             </IonHeader>
             <IonContent>
                 <IonList>
-                <IonMenuToggle>
-                    <NavLink style={{textDecoration: 'none'}} to="/home">
-                        <IonItem button>
-                            <IonIcon slot="start" name="home"></IonIcon>
-                            <IonLabel>Home</IonLabel>
-                        </IonItem>
-                    </NavLink>
-                </IonMenuToggle>
+                    <Link to="/home">
+                        <IonMenuToggle>
+                            <IonItem button>
+                                <IonIcon slot="start" name="home"></IonIcon>
+                                <IonLabel>Ajustes</IonLabel>
+                            </IonItem>
+                        </IonMenuToggle>
+                    </Link>
                 <IonMenuToggle>
                     <NavLink style={{textDecoration: 'none'}} to="/list">
                         <IonItem button>
