@@ -2,7 +2,7 @@ import React from "react"
 import Post from "../../components/Posts/Post";
 import "../../css/styles.css"
 
-const categories = ["Categoría", "Categoría", "Categoría", "Categoría", "Categoría", "Categoría", "Categoría", "Categoría"];
+const categories = ["Categoría1", "Categoría2", "Categoría3", "Categoría4", "Categoría5", "Categoría6", "Categoría7", "Categoría8"];
 
 const PostStatus = (posts) => {
     if(posts.length === 0 ){
