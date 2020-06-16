@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Category = props => {
     const { category } = props.match.params;
-    console.log("user", category);
+    
     useEffect(() =>{
         console.log("Mounting");
     });
     return (
         <div>
-            
+            <h1>{category}</h1>
         </div>
     );
 };

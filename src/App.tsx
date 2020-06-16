@@ -19,6 +19,7 @@ import Home from "./components/Home";
 import Profile from "./components/UserProfile/Profile";
 import Bottom from "./Menu/Bottom";
 import Settings from "./components/Settings/Settings";
+import Category from "./components/Category/Category";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -47,6 +48,7 @@ const App: React.FC = () => {
                 <PrivateRoute exact path="/home" component={Home} />
                 <PrivateRoute exact path="/profile/:username" component={Profile} />
                 <PrivateRoute exact path="/settings" component={Settings} />
+                <PrivateRoute exact path="/category/:category" component={Category} />
               </Switch>
             <Bottom></Bottom>
       </AuthProvider>
