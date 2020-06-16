@@ -4,18 +4,21 @@
     overflow-x: scroll;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
-    margin-left: -40px;
+    margin-left: -30px;
     
 }
 .scroll-list{
     display: flex;
     justify-content: space-between;
 }
-.scroll-list{
+.scroll-item{
+    margin-left: 10px;
     text-align: center;
     margin: 0 0.5em;
     list-style:none
 }
-.scroll-item{
-    margin-left: 10px;
+.scroll-item img {
+    width: 160px;
+    border-radius: 6%;
+    max-width: none;
 }

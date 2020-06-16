@@ -7,6 +7,7 @@ import { categories, PostStatus } from "../Helpers/Home/H_home";
 import TextArea from "./Modal/TextArea";
 import "../css/scroll.css";
 import postServices from "../Services/postService";
+import PhotoCategory from "../images/cambio_climatico.jpg"
 
 class Home extends Component {
     state = {
@@ -62,6 +63,7 @@ class Home extends Component {
                             {categories.map(listCategory =>{
                                 return (
                                     <li key={listCategory} className="scroll-item">
+                                        <img src={PhotoCategory}/>
                                         <p>{listCategory}</p>
                                     </li>
                                 )
