@@ -58,7 +58,7 @@ class Home extends Component {
                      </IonToolbar>
                 </IonHeader>
                 <IonContent>
-                    <h5>Categorías populares</h5>
+                    <h5 className="title-category">Categorías populares</h5>
                     <div className="scroll">
                         <ul className="scroll-list">
                             {categories.map(listCategory =>{
