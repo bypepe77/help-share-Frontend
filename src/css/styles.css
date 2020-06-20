@@ -16,7 +16,24 @@ ion-content{
 .container-home{
     margin-top: -10px;
 }
-
+.error-home{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 12px 10px;
+}
+.error-card{
+    display: flex;
+    flex-direction: row;
+}
+.error-span{
+    margin-left: 10px;
+}
+.icon-error{
+    width: 100px;
+    height: 40px;
+}
 .title-category{
     padding: 12px 10px;
 }
