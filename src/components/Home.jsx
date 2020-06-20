@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {IonModal, IonButtons, IonBackButton,  IonContent, IonHeader, IonSpinner, IonPage, IonTitle, IonText, IonToolbar, IonToggle, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
-import { add, moon } from  'ionicons/icons';
+import { add, moon, alertCircle } from  'ionicons/icons';
 import { Link } from "react-router-dom";
 import { withAuth } from "../Context/AuthContext";
 import { DivAddPost } from "../css/index";
@@ -82,7 +82,10 @@ class Home extends Component {
                         {!error ? (!loading && PostStatus(posts)
                              ) : (
                                 <div className="error-home">
-                                    <p>{error}</p>
+                                    <div className="error-card">
+                                        <IonIcon icon={alertCircle} className="icon-error"/>
+                                        <span className="error-span">{error}</span>
+                                    </div>
                                 </div>
                          )}
                     </div>
