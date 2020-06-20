@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "../../css/styles.css";
 import UserImage from "../../images/default.jpg";
 import { Link } from "react-router-dom";
@@ -8,11 +8,24 @@ import Moment from "react-moment"
 import { ReactTinyLink } from 'react-tiny-link'
 import { ExistLink } from "./post_functions";
 import ActionPost from "./ActionPost";
+import { withAuth } from "../../Context/AuthContext";
 
 const ListPosts = (props) =>{
-    const { post } = props;
+    const { post, user } = props;
     const DateToFormat = post.created_at;
-    
+    const [likes, setLikes] = useState([]);
+    const [liked, setLiked] = useState(false);
+
+    useEffect(() =>{
+        setLikes(post.likes)
+        checkIfUserDidLike();
+    });
+
+    const checkIfUserDidLike = () =>{
+        const liked = likes.includes(user._id);
+        setLiked(liked ? true : false);
+    }
+
     return (
         <div className="post-card">
             <div className="user-info" >
@@ -37,4 +50,4 @@ const ListPosts = (props) =>{
 }
 
 
-export default ListPosts;
+export default withAuth(ListPosts);
