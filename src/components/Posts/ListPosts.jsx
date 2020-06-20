@@ -2,13 +2,14 @@ import React, {useState, useEffect} from 'react';
 import "../../css/styles.css";
 import UserImage from "../../images/default.jpg";
 import { Link } from "react-router-dom";
-import { ellipsisHorizontal } from "ionicons/icons";
+import { ellipsisHorizontal, heartSharp, heartOutline } from "ionicons/icons";
 import { IonIcon } from '@ionic/react';
 import Moment from "react-moment"
 import { ReactTinyLink } from 'react-tiny-link'
 import { ExistLink } from "./post_functions";
 import ActionPost from "./ActionPost";
 import { withAuth } from "../../Context/AuthContext";
+import postServices from "../../Services/postService";
 
 const ListPosts = (props) =>{
     const { post, user } = props;
@@ -17,7 +18,7 @@ const ListPosts = (props) =>{
     const [liked, setLiked] = useState(false);
 
     useEffect(() =>{
-        setLikes(post.likes)
+        setLikes(post.likes);
         checkIfUserDidLike();
     });
 
@@ -26,6 +27,16 @@ const ListPosts = (props) =>{
         setLiked(liked ? true : false);
     }
 
+    const handleLike = async () =>{
+        const makeCall =  liked ? postServices.createUnlike(post._id, user.username) : postServices.createLike(post._id, user.username);
+
+        try {
+            const makeLike = await makeCall;
+            console.log("Handle like: ", makeCall);
+        } catch (error) {
+            console.log("Error like o unlike");
+        }
+    }
     return (
         <div className="post-card">
             <div className="user-info" >
@@ -44,6 +55,17 @@ const ListPosts = (props) =>{
             </div>
             <div>
                 {ExistLink(post.text)}
+                <div className="card-footer">
+                    <div className="like-wrapper">
+                        <div className="option">
+                            {liked ? <IonIcon icon={heartSharp} className="like-active"/> : <IonIcon icon={heartOutline} className="like-deactivated"/>}
+                            <span className="span-likes">{likes.length} Me gusta</span>
+                        </div>
+                        <div className="option">
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
       );
