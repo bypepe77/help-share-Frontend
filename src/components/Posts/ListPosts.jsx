@@ -6,6 +6,7 @@ import { ellipsisHorizontal } from "ionicons/icons";
 import { IonIcon } from '@ionic/react';
 import Moment from "react-moment"
 import { ReactTinyLink } from 'react-tiny-link'
+import { ExistLink } from "./post_functions";
 
 const ListPosts = (props) =>{
     const { post } = props;
