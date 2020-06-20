@@ -1,40 +1,87 @@
-import React from 'react';
+import React, { Component } from 'react';
 import "../../css/styles.css";
 import UserImage from "../../images/default.jpg";
 import { Link } from "react-router-dom";
-import { ellipsisHorizontal } from "ionicons/icons";
+import { ellipsisHorizontal, heartSharp, heartOutline } from "ionicons/icons";
 import { IonIcon } from '@ionic/react';
 import Moment from "react-moment"
-import { ReactTinyLink } from 'react-tiny-link'
 import { ExistLink } from "./post_functions";
 import ActionPost from "./ActionPost";
+import { withAuth } from "../../Context/AuthContext";
+import postServices from "../../Services/postService";
 
-const ListPosts = (props) =>{
-    const { post } = props;
-    const DateToFormat = post.created_at;
-    
-    return (
-        <div className="post-card">
-            <div className="user-info" >
-                <img src={UserImage} width="56px" height="56px"/>
-                <div className="user-link">
-                    <Link to={`/profile/${post.username.username}`} >
-                        <p className="username-size">{post.username.username}</p>
-                    </Link>
-                </div>
-                <div className="post-date">
-                    <Moment fromNow date={DateToFormat}></Moment>
-                </div>
-                <div className="user-actions">
-                    <IonIcon icon={ellipsisHorizontal} onClick={() => {console.log("Click")}} className="icon-user-actions"/>
-                </div>
-            </div>
+class ListPosts extends Component {
+        state = {
+            likes: "",
+            liked: "",
+        }
+
+        componentDidMount(){
+            const { post } = this.props;
+            this.setState({likes: [...post.likes]})
+            this.checkIfUserDidLike()
+        }
+        checkIfUserDidLike = () =>{
+            const { user } = this.props;
+            const liked = this.state.likes.includes(user._id);
+            this.setState({
+                liked: liked ? true : false,
+            });
+        }
+        handleLike = async  () =>{
+            const { post, user } = this.props;
+            const { liked } = this.state;
+            const makeCall = liked ? postServices.createUnlike(post._id, user.username) : postServices.createLike(post._id, user.username);
+            try {
+                const makeLike = await makeCall;
+                this.setState({
+                    likes: [...makeLike.likes],
+                    liked: !liked,
+                });
+            } catch (error) {
+                console.log("Error like o unlike");
+            }
+        }
+        
+    render() {
+        const { post } = this.props;
+        const { likes, liked } = this.state;
+        const DateToFormat = post.created_at;
+        return (
             <div>
-                {ExistLink(post.text)}
-            </div>
-        </div>
-      );
+              <div className="post-card">
+                    <div className="user-info" >
+                        <img src={UserImage} width="56px" height="56px"/>
+                        <div className="user-link">
+                            <Link to={`/profile/${post.username.username}`} >
+                                <p className="username-size">{post.username.username}</p>
+                            </Link>
+                        </div>
+                        <div className="post-date">
+                            <Moment fromNow date={DateToFormat}></Moment>
+                        </div>
+                        <div className="user-actions">
+                            <IonIcon icon={ellipsisHorizontal} onClick={() => {console.log("Click")}} className="icon-user-actions"/>
+                        </div>
+                    </div>
+                    <div>
+                        {ExistLink(post.text)}
+                        <div className="card-footer">
+                            <div className="like-wrapper">
+                                <div className="option">
+                                    {liked ? <IonIcon icon={heartSharp} className="like-active" onClick={this.handleLike}/> : <IonIcon icon={heartOutline} onClick={this.handleLike} className="like-deactivated"/>}
+                                    <span className="span-likes">{likes.length} Me gusta</span>
+                                </div>
+                                <div className="option">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        );
+    }
 }
 
-
-export default ListPosts;
+export default withAuth(ListPosts)
