@@ -21,7 +21,7 @@ class Home extends Component {
 
     async componentDidMount(){
         try {
-            const posts = await postServices.listAllPosts()
+            const posts = await postServices.listAllPost()
             this.setState({
                 posts,
                 loading: false
