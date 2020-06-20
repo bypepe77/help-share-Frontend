@@ -23,7 +23,7 @@ class ListPosts extends Component {
         }
         checkIfUserDidLike = () =>{
             const { user } = this.props;
-            const liked = this.state.likes.includes(user._id);
+            const liked = this.props.post.likes.includes(user._id);
             this.setState({
                 liked: liked ? true : false,
             });
