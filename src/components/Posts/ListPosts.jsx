@@ -7,6 +7,7 @@ import { IonIcon } from '@ionic/react';
 import Moment from "react-moment"
 import { ReactTinyLink } from 'react-tiny-link'
 import { ExistLink } from "./post_functions";
+import ActionPost from "./ActionPost";
 
 const ListPosts = (props) =>{
     const { post } = props;
@@ -25,7 +26,7 @@ const ListPosts = (props) =>{
                     <Moment fromNow date={DateToFormat}></Moment>
                 </div>
                 <div className="user-actions">
-                    <IonIcon icon={ellipsisHorizontal} onClick={() => {console.log("click")}} className="icon-user-actions"/>
+                    <IonIcon icon={ellipsisHorizontal} onClick={() => {console.log("Click")}} className="icon-user-actions"/>
                 </div>
             </div>
             <div>
