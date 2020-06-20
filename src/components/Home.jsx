@@ -21,7 +21,7 @@ class Home extends Component {
 
     async componentDidMount(){
         try {
-            const posts = await postServices.listAllPost()
+            const posts = await postServices.listAllPosts()
             this.setState({
                 posts,
                 loading: false
@@ -81,7 +81,7 @@ class Home extends Component {
                         )}
                         {!error ? (!loading && PostStatus(posts)
                              ) : (
-                                <div>
+                                <div className="error-home">
                                     <p>{error}</p>
                                 </div>
                          )}
