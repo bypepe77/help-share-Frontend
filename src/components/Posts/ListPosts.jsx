@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "../../css/styles.css";
 import UserImage from "../../images/default.jpg";
 import { Link } from "react-router-dom";
-import { ellipsisHorizontal, heartSharp, heartOutline } from "ionicons/icons";
+import { ellipsisHorizontal, heartSharp, heartOutline, chatbubbleOutline, shareSocialOutline} from "ionicons/icons";
 import { IonIcon } from '@ionic/react';
 import Moment from "react-moment"
 import { ExistLink } from "./post_functions";
@@ -73,7 +73,11 @@ class ListPosts extends Component {
                                     <span className="span-likes">{likes.length} Me gusta</span>
                                 </div>
                                 <div className="option">
-                                
+                                    <IonIcon icon={chatbubbleOutline} className="comment-icon" />
+                                    <span className="span-likes">{likes.length}</span>
+                                </div>
+                                <div className="option">
+                                    <IonIcon icon={shareSocialOutline} className="share-icon"/>
                                 </div>
                             </div>
                         </div>
