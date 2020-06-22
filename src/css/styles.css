@@ -99,6 +99,10 @@ ion-content{
     padding: 12px 10px;
     border-top: 1px solid #eaeaf5;
 }
+.like-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
 .like-active{
     width: 40px;
     height: 26px;
@@ -127,9 +131,16 @@ ion-content{
     position: absolute;
     margin-top: 5px;
 }
-.option{
-    width: 35%;
-}
 .post-box:last-child{
     margin-bottom: 100px;
+}
+.comment-icon{
+    width: 40px;
+    height: 26px;
+    margin-left: -20px;
+}
+.share-icon{
+    width: 40px;
+    height: 26px;
+    margin-left: -70px;
 }
