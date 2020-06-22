@@ -101,7 +101,7 @@ class Home extends Component {
                                 <IonToolbar>
                                     <IonButtons slot="start">
                                         <div>
-                                            <IonIcon icon={arrowBack}  className="back-arrow"/> 
+                                            <IonIcon icon={arrowBack}  className="back-arrow" onClick={this.modalController}/> 
                                         </div>
                                     </IonButtons>
                                      <IonTitle>Add post</IonTitle>
