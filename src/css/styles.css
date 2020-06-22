@@ -99,13 +99,23 @@ ion-content{
     padding: 12px 10px;
     border-top: 1px solid #eaeaf5;
 }
-.like-wrapper{
-   
-}
 .like-active{
     width: 40px;
     height: 26px;
     fill: red;
+	transform: scale(1);
+	animation: pulse 0.5s ;
+}
+@keyframes pulse {
+	0% {
+		transform: scale(0.55);
+	}
+    50%{
+        transform: scale(0.25);
+    }
+	100% {
+		transform: scale(1);
+	}
 }
 .like-deactivated{
     width: 40px;
