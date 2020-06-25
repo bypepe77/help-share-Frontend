@@ -37,6 +37,17 @@ ion-content{
 .title-category{
     padding: 12px 10px;
 }
+.spinner-home{
+    margin-top: 180px;
+    height: 60px;
+    width: 60px;
+}
+.loading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* POST STYLE */
 .post-card{
