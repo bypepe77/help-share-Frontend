@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {IonModal, IonButtons, IonBackButton,  IonContent, IonHeader, IonSpinner, IonPage, IonTitle, IonText, IonToolbar, IonToggle, IonItem, IonLabel, IonList, IonItemDivider, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
-import { add, moon, alertCircle, arrowBack } from  'ionicons/icons';
+import {IonModal, IonButtons,IonContent, IonHeader, IonSpinner, IonPage, IonTitle, IonText, IonToolbar, IonButton, IonFab, IonIcon , IonFabButton} from '@ionic/react';
+import { add, alertCircle, arrowBack } from  'ionicons/icons';
 import { Link } from "react-router-dom";
 import { withAuth } from "../Context/AuthContext";
 import { DivAddPost } from "../css/index";
@@ -65,7 +65,7 @@ class Home extends Component {
                                 return (
                                     <li key={listCategory} className="scroll-item">
                                         <Link  to={`/category/${listCategory}`}>
-                                            <img src={PhotoCategory}/>
+                                            <img src={PhotoCategory} alt={listCategory}/>
                                         </Link>
                                         <p>{listCategory}</p>
                                     </li>

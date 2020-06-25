@@ -1,20 +1,9 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
-import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-  IonBadge,
-} from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
+import { Switch } from "react-router-dom";
 import AnonRoute from "./components/Login/AnonRoute";
 import PrivateRoute from "./components/Login/PrivateRoute";
 import Login from "./components/Login/Login";
-import AuthProvider, { withAuth } from "./Context/AuthContext";
+import AuthProvider from "./Context/AuthContext";
 import Home from "./components/Home";
 import Profile from "./components/UserProfile/Profile";
 import Bottom from "./Menu/Bottom";

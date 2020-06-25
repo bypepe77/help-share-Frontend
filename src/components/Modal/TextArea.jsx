@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonPage, IonContent, IonItem,  IonTextarea, IonInput  } from '@ionic/react';
+import { IonPage, IonContent, IonItem,  IonTextarea  } from '@ionic/react';
 import {ButtonWritePost} from "../../css/index";
 import postServices from "../../Services/postService";
 

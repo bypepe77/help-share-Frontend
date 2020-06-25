@@ -3,7 +3,7 @@ import "../../css/styles.css";
 import { ReactTinyLink } from 'react-tiny-link'
 
 const ExistLink = (text) =>{
-    const urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    const urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
     const getUrl =  text.match(urlRegex, (url) =>{
         return url
     })
