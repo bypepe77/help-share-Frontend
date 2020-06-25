@@ -24,7 +24,7 @@ class Home extends Component {
             const posts = await postServices.listAllPost()
             this.setState({
                 posts,
-                loading: true
+                loading: false
             });
         } catch (error) {
             this.setState({
