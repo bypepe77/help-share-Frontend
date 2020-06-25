@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
-import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge, IonRouterOutlet } from '@ionic/react';
-import {
-    home,
-    person,
-    triangle,
-    calendar,
-    personCircle,
-    map,
-    informationCircle,
-  } from "ionicons/icons";
-import { Link, Redirect } from "react-router-dom";
-import PrivateRoute from "../components/Login/PrivateRoute";
-import Home from "../components/Home";
-import Profile from "../components/UserProfile/Profile";
+import {IonTabButton, IonIcon, IonLabel, IonBadge } from '@ionic/react';
+import { home, person } from "ionicons/icons";
+import { Link } from "react-router-dom";
 import { withAuth } from "../Context/AuthContext";
 import { DivMenu } from "../css/index";
 import "../css/styles.css";

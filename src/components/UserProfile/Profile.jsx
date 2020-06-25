@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { IonContent, IonHeader, IonLabel, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonMenuButton, IonMenu,IonList,IonItem, IonRouterOutlet, IonMenuToggle, IonApp , IonSpinner,  IonPage } from '@ionic/react';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons,IonMenuButton,IonRouterOutlet, IonSpinner, IonPage } from '@ionic/react';
 import { withAuth } from "../../Context/AuthContext";
 import profileServices from "../../Services/profileService";
 import Menu from "../Menu/Menu";

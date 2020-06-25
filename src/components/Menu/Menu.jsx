@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { IonContent, IonHeader, IonLabel, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonMenuButton, IonMenu,IonList,IonItem, IonRouterOutlet, IonMenuToggle, IonApp, IonPage } from '@ionic/react';
+import { IonContent, IonHeader, IonLabel, IonTitle, IonToolbar, IonIcon, IonMenu,IonList,IonItem, IonMenuToggle} from '@ionic/react';
 
 class Menu extends Component {
     render() {

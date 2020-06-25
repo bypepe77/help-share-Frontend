@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonList, IonItemDivider, IonButton } from '@ionic/react';
+import { IonContent, IonPage, IonInput, IonItem, IonList, IonButton } from '@ionic/react';
 import { withAuth } from "../../Context/AuthContext";
 
 class Login extends Component {
