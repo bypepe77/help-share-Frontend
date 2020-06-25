@@ -48,7 +48,7 @@ class Profile extends Component {
                 </IonHeader>
                 <IonContent>
                     {error  && <div className="error"> <p>{error}</p></div> }
-                    {loading && <DivSpinner> <IonSpinner name="dots" /> </DivSpinner>}
+                    {loading && <DivSpinner> <IonSpinner name="crescent"  className="spinner-profile"/> </DivSpinner>}
                     {!error && !loading && <DivUserProfile>{userProfile(profile, posts)}</DivUserProfile>}
                 </IonContent>
           </IonPage>
