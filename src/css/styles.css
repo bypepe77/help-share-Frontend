@@ -161,3 +161,9 @@ ion-content{
     height: 26px;
     margin-top: 5px;
 }
+/* PROFILE */
+
+.spinner-profile{
+    height: 60px;
+    width: 60px;
+}

@@ -6,8 +6,12 @@ export const DivUserProfile = styled.div`
 
 `
 export const DivSpinner = styled.div`
-    text-align: center;
-    margin-top: 50%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 // HOME 
