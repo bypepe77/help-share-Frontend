@@ -24,7 +24,7 @@ class Home extends Component {
             const posts = await postServices.listAllPost()
             this.setState({
                 posts,
-                loading: false
+                loading: true
             });
         } catch (error) {
             this.setState({
@@ -76,7 +76,7 @@ class Home extends Component {
                     <div>
                         {loading && (
                             <div className="loading">
-                                <IonSpinner name="dots" />
+                                <IonSpinner name="crescent" className="spinner-home" />
                             </div>
                         )}
                         {!error ? (!loading && PostStatus(posts)
