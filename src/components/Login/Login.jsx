@@ -26,7 +26,7 @@ class Login extends Component {
   };
   render() {
       const { username, password } = this.state;
-      console.log("user" , username)
+      const { errorLogin } = this.props;
     return (
         <IonPage>
             <IonContent>
@@ -39,6 +39,7 @@ class Login extends Component {
                     </IonItem>
                     <IonButton color="primary" expand="full" onClick={this.handleFormSubmit}>Iniciar sesión</IonButton>
                 </IonList>
+                <p style={{color: "red"}}>{errorLogin}</p>
             </IonContent>
         </IonPage>
     );

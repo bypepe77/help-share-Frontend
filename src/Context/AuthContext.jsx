@@ -67,7 +67,7 @@ export default class AuthProvider extends Component {
       .catch(() => {
         this.setState({
           isLoading: false,
-          errorLogin: "Error al hacer Login"
+          errorLogin: "Usuario o contraseña incorrectos"
         })
       })
   }
