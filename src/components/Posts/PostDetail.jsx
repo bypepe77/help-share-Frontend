@@ -13,7 +13,6 @@ const PostDetail = (props) => {
     const getPost = async () =>{
         try {
          const posts = await postServices.postDetail(props.match.params.postid);
-         console.log("posts", posts);
          setState({
              loading: false,
              post: [posts.postDetail],
@@ -21,11 +20,10 @@ const PostDetail = (props) => {
 
          })
         } catch (error) {
-            console.log("error")
             setState( prev => ({
                 ...prev,
                 loading: false,
-                error: "Esta publicación no esta disponible",
+                error: "Esta publicación no esta disponible o ha sido eliminada",
             }))
         }
     }
@@ -40,9 +38,17 @@ const PostDetail = (props) => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <Post posts={state.post} />
-                <p>Comentarios</p>
-                {state.comments ? <Post posts={state.comments} /> : <p>No ahy respuestas a esta publicación</p> }
+                {!state.error ? 
+                    <>
+                        <Post posts={state.post} />
+                        <p>Comentarios</p>
+                        {state.comments ? <Post posts={state.comments} /> : <p>No hay respuestas a esta publicación</p> }
+                    </>
+                : 
+                    <div className="error-postDetail">
+                        <p>{state.error}</p>
+                     </div>
+                }
             </IonContent>
         </IonPage>
     )
