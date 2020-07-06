@@ -50,6 +50,10 @@ ion-content{
 }
 
 /* POST STYLE */
+.post-background{
+    position: relative;
+    z-index:1;
+}
 .post-card{
     margin-top: 10px;
     margin-left: 10px;
