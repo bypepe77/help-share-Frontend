@@ -1,5 +1,6 @@
 import React, { useState , useEffect }  from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from "@ionic/react";
+import {withRouter} from 'react-router-dom';
 import postServices from '../../Services/postService';
 import Post from "./Post";
 
@@ -27,6 +28,9 @@ const PostDetail = (props) => {
             }))
         }
     }
+    const goBack = () =>{
+        console.log("back")
+    }
     useEffect(() => {
         getPost();
        }, []);
@@ -34,6 +38,9 @@ const PostDetail = (props) => {
         <IonPage>
                <IonHeader>
                  <IonToolbar>
+                    <div>
+                         <IonIcon icon={arrowBack}  className="back-arrow" onClick={this.goBack}/> 
+                    </div>
                     <IonTitle>Publicación</IonTitle>
                 </IonToolbar>
             </IonHeader>
@@ -55,4 +62,4 @@ const PostDetail = (props) => {
 }
 
 
-export default PostDetail
+export default withRouter(PostDetail)
